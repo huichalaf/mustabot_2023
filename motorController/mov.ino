@@ -1,5 +1,5 @@
 void Mov (float X2 ,float X1 ){
-  X2 *= 0.6;
+  X2 = X2;
   X1 = -X1;
   if(X2>=255) X2=255;           // Satura los valores en maximos y minimos admitidos por pwm
   if(X2<=-255) X2=-255;
@@ -75,4 +75,28 @@ void Brake_controlled(float p1, float p2){
     p2_new -= 0.25;
     delay(5);
   }
+}
+
+void turn_left(double grados_radianes){
+  //esta función hace que el robot gire a la izquierda
+  //primero frenamos
+  Brake();
+  //ahora giramos
+  Mov(-100,100);
+  //ahora esperamos
+  delay((grados_radianes/6.283185307)*LAP_TIME_LEFT);
+  //ahora frenamos
+  Brake();
+}
+
+void turn_right(double grados_radianes){
+  //esta función hace que el robot gire a la derecha
+  //primero frenamos
+  Brake();
+  //ahora giramos
+  Mov(100,-100);
+  //ahora esperamos
+  delay((grados_radianes/6.283185307)*LAP_TIME_RIGHT);
+  //ahora frenamos
+  Brake();
 }
