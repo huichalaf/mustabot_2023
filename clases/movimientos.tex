@@ -1,0 +1,47 @@
+\documentclass[12pt]{article}
+\usepackage{amsmath}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\title{Movimiento}
+\author{Team Mustabot 2022}
+\date{\today}
+
+\begin{document}
+\maketitle
+
+\section*{Funcion Mov}
+La función mov(P1, P2), será nuestra gran aliada en lo que a movimiento del robot respecta, nos permite usando
+PWM, cambiar la potencia que le entregamos a cada uno de los motores presentes en el robot, esto nos sirve para:
+% Comentario: aca creamos una lista
+\begin{itemize}
+    \item Mover el robot hacia adelante
+    \item Mover el robot hacia atrás
+    \item Girar el robot hacia la derecha
+    \item Girar el robot hacia la izquierda
+\end{itemize}
+Por otra parte, también existen otras funciones que nos permiten mover el robot usando movimientos predefinidos
+tales como rotar(segundos) o frenar(segundos), estas funciones nos permiten mover el robot de manera más sencilla
+pero también hacen uso de la función mov.
+
+\section*{Funciones Derivadas}
+
+\subsection*{Funcion mov\_forward}
+Esta función nos permite mover el robot hacia adelante, para esto, se le entrega una sola potencia de 0 a 255 la cual se replica en ambos motores.
+
+\subsection*{Funcion mov\_backward}
+Esta función nos permite mover el robot hacia atrás, para esto, se le entrega una sola potencia de 0 a 255 la cual se replica en ambos motores.
+
+\subsection*{Funcion mov\_right}
+Esta función nos permite girar el robot hacia la derecha en su propio eje, para esto, se le entrega una sola potencia de 0 a 255 la cual se replica en ambos motores pero en sentido inverso.
+
+\subsection*{Funcion mov\_left}
+Esta función nos permite girar el robot hacia la izquierda en su propio eje, para esto, se le entrega una sola potencia de 0 a 255 la cual se replica en ambos motores pero en sentido inverso.
+
+\subsection*{Funcion brake}
+Esta funcion nos permite frenar el robot de una manera controlada, ingresamos como parametro el tiempo que queremos tarde en frenar por completo (en milisegundos)
+% Puedes agregar más contenido entre las secciones si lo deseas
+
+\end{document}

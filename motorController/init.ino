@@ -40,16 +40,16 @@ void color_init(int pinSensor){
   delay(500);
 }
 
-void init_laser(int pinLaser){
-  activateSensor(pinLaser);
-  sensor.setTimeout(500);
-  if (!sensor.init())
-  {
-    Serial.println("Failed to detect and initialize sensor!");
-    while (1) {}
-  }
-  sensor.startContinuous();
+void init_lasers(int pinLaser){
+  pinMode(laser1, OUTPUT); // Configurar el pin XSHUT como salida
+  pinMode(laser2, OUTPUT);
+  pinMode(laser3, OUTPUT);
+  digitalWrite(laser2, LOW);
+  digitalWrite(laser3, LOW);
+  digitalWrite(laser1, LOW);
+  delay(10);
 }
+
 void init_i2c(){
   while (!Serial);
   

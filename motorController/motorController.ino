@@ -46,18 +46,24 @@ int semiinterseccion_counter_left = 0;
 int intersection_counter = 0;
 //multiplicadores para los valores de los sensores del qtr
 double multiplier0 = 1.25;
-double multiplier1 = 3;
-double multiplier2 = 3.7;
-double multiplier3 = 4.5;
+double multiplier1 = 5;
+double multiplier2 = 6;
+double multiplier3 = 7;
 
-int pines_laseres[3] = {1,2,3};
-int pines_color[2] = {4,5};
+int pines_laseres[3] = {9,11,13};
+int pines_color[2] = {51,53};
+//pines conectados a I2C
+int laser1 = 5;
+int laser2 = 9;
+int laser3 = 11;
+int color1 = 51;
+int color2 = 53;
 long error_previo = 0;
 
-#define kp 0.95
-#define kd -0.017
+#define kp 0.015
+#define kd 0.05
 #define ki 0.0
-#define PBASE 100
+#define PBASE 50
 //-----------arriba solo parametros del PID---------------//
 //valores actuales de potencia del motor, se modifican solo desde la función Mov
 double power_motor_1 = 0;
@@ -69,20 +75,18 @@ void setup(){
 
   //ahora inicializamos todos los sensores y actuadores del robot
   motor_init();
-  qtr_init();
-  for(int i=0; i<3; i++){
-    init_laser(&pines_laseres[i]);
-  }
-  for(int i=0; i<2; i++){
-    color_init(&pines_color[i]);
-  }
-  //delay(5000);
+  //qtr_init();
+  //init_laser(laser1);
+  //init_laser(laser2);
+  //init_laser(laser3);
+  //color_init(color1);
+  //color_init(color2);
 }
 
 void loop(){
-  
+  //Serial.println(readSensorLaser(9));
   //debug_QTR();
   //debug_color();
-  PID();
-  //Mov(100, 100);
+  //PID();
+  Mov(255, 255);
 }

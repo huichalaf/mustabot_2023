@@ -1,0 +1,18 @@
+clase 1:
+- Introducción
+- Conocer gekko
+clase 2:
+- PID y movimientos
+clase 3:
+- jugar con gekko
+clase 4:
+- mini robocup
+clase 5:
+- simulación
+clase 6:
+- diseño e impresión y revisar avance en simulación
+- jugar con gekko
+clase 7:
+- busqueda de mejoras y perfeccionamiento de algoritmos del robot
+clase 8:
+- desafío final

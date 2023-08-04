@@ -34,3 +34,21 @@ class ENCODER:
 
     def set_start_position(self):
         self.start_position = self.encoder.getValue()
+
+def doblar_derecha(fraccion):
+    tiempo_vuelta = 3.25
+    #hacemos que el robot se de una fraccion de vuelta hacia la derecha, la fraccion depende del valor de input de la funcion
+    fraccion_vuelta = 1/fraccion
+    potencia1 = 4
+    potencia2 = -4
+    tiempo = tiempo_vuelta*fraccion_vuelta
+    return tiempo, potencia1, potencia2
+
+def doblar_izquierda(fraccion):
+    tiempo_vuelta = 3.25
+    #hacemos que el robot se de una fraccion de vuelta hacia la izquierda, la fraccion depende del valor de input de la funcion
+    fraccion_vuelta = 1/fraccion
+    potencia1 = -4
+    potencia2 = 4
+    tiempo = tiempo_vuelta*fraccion_vuelta
+    return tiempo, potencia1, potencia2

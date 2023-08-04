@@ -35,3 +35,9 @@ void debug_color(){
   }
   delay(50);
 }
+
+void debug_lasers(){
+  read_laser1();
+  read_laser2();
+  read_laser3();
+}
